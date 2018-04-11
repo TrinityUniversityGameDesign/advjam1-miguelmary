@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour {
 
@@ -57,8 +58,9 @@ public class EnemyMovement : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             loseText.SetActive(true);
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
         }
     }
 }
